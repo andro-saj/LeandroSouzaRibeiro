@@ -1,15 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <title>Nome do Site</title>
-
-    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Contato - Roteiro Facil</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,32 +20,40 @@
                 <li><a href="./sobre.html">Sobre</a></li>
                 <li><a href="./contato.html">Contato</a></li>
             </ul>
-    
-            <!-- Caixa de busca com botões -->
-            
         </nav>
     </header>
-    
+
+    <!-- Conteúdo principal -->
     <main>
         <section class="hero-fullscreen">
-            <!-- Ícones sociais à esquerda -->
             <div class="social-sidebar">
                 <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                 <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
                 <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
             </div>
-            
-    
-            <!-- Conteúdo principal -->
-            
+
+            <div class="hero-content-left">
+                <div class="text-box contact-container">
+                    <!-- Título -->
+                    <div class="contact-title">
+                        <h1>Contact</h1>
+                        
+                    </div>
+
+                    <!-- Formulário -->
+                    <form id="contactForm" class="contact-form">
+                        <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                        <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+                        <textarea id="message" name="message" placeholder="Sua mensagem" rows="6" required></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
+
+                    <div id="formResponse" style="margin-top:15px;color:#ffe600;"></div>
+                </div>
+            </div>
         </section>
     </main>
-    
-    
-
-    <!-- Conteúdo principal -->
-   
 
     <!-- Rodapé -->
     <footer>
@@ -58,7 +63,7 @@
                 <span>Local:</span><br>
                 Seg-Sex: 8:00am - 12:00pm<br>
                 Seg-sex: 13:30am - 18:00pm<br>
-                Sabado Aberto
+                Sábado Aberto
                 <hr class="visible-xs">
               </section>
               <section id="address" class="col-sm-4">
@@ -70,16 +75,35 @@
               </section>
               <section id="testimonials" class="col-sm-4">
                 <p>""O melhor fotografo da Bahia! E isso é dizer muito, já que já fui em muitos!""</p>
-                <p>"Atendimento ecelente! Não perco mas! Irei ligar novamente quando precizar!"</p>
+                <p>"Atendimento excelente! Não perco mais! Irei ligar novamente quando precisar!"</p>
               </section>
             </div>
             <div class="text-center">&copy; Copyright Leandro Souza Ribeiro 2022 / CNP 19.429.155/0001-76</div>
-          </div>
+        </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="travel_recommendation.js"></script>
-<!-- Code injected by live-server -->
+    <script>
+        // Script simples para simular envio
+        const form = document.getElementById('contactForm');
+        const formResponse = document.getElementById('formResponse');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if(name && email && message){
+                // Simula envio
+                formResponse.textContent = `Obrigado, ${name}! Sua mensagem foi enviada com sucesso.`;
+                form.reset();
+            } else {
+                formResponse.textContent = 'Por favor, preencha todos os campos.';
+            }
+        });
+    </script>
 
 </body>
 </html>

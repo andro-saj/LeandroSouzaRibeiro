@@ -226,43 +226,47 @@ nav ul li a:hover {
 }
 
 /* ================= TEAM TILES ================= */
-/* ================= TEAM TILES COMPACTO ================= */
 #main-content {
     position: relative;
     z-index: 2;
-    margin-top: -180px; /* flutua sobre a hero */
+    margin-top: -180px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px; /* espaçamento entre os tiles */
+    gap: 30px;
 }
 
 .team-card {
-    background: transparent; /* sem fundo grande */
+    background: transparent;
     padding: 0;
     text-align: center;
     transition: transform 0.3s ease;
 }
 
 .team-card:hover {
-    transform: translateY(-5px); /* leve flutuação */
+    transform: translateY(-5px);
 }
 
+/* ================= AVATAR SEM FUNDO ================= */
 .team-card .avatar {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 10px;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 15px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #fd4646, #02ac70);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 40px;
+    
 }
 
-.team-card h3 {
-    margin: 5px 0 2px;
-    font-size: 1em;
+.team-card .avatar i {
+    font-size: 20px;
+    color: #fff;
+}
+
+.team-cards h1 {
+    
+    margin: 60px 0 2px;
     color: #fff;
 }
 
@@ -274,9 +278,83 @@ nav ul li a:hover {
 }
 
 .team-card p {
-    display: none; /* esconde a descrição para simplificar */
+    display: none;
 }
 
+/* ================= FORMULÁRIO DE CONTATO ================= */
+.contact-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background-color: rgba(0,0,0,0.3);
+    padding: 30px 40px;
+    border-radius: 10px;
+}
+
+.contact-title {
+    flex: 1;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-title h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.contact-title p {
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.contact-form {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1.1em;
+    font-family: 'Montserrat', sans-serif;
+    resize: vertical;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--main-color);
+    box-shadow: 0 0 8px rgba(24,181,202,0.5);
+}
+
+.contact-form button {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--main-color);
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1.1em;
+}
+
+.contact-form button:hover {
+    background-color: #ffe600;
+}
 
 /* ================= FOOTER ================= */
 footer {
@@ -334,24 +412,21 @@ footer .text-center {
     .text-box h1 { font-size: 2em; }
     .text-box h2 { font-size: 1.2em; }
     .social-icon { width: 40px; height: 40px; font-size: 1.5em; }
-    #main-content { margin-top: -60px; } /* ajuste para mobile */
+    #main-content { margin-top: -60px; }
     footer .row { flex-direction: column; align-items: flex-start; }
     hr.visible-xs { display: block; width: 100%; border: 1px solid #555; margin: 15px 0; }
-}
 
-/* ================= AVATAR (BONEQUINHO) ================= */
-.avatar {
-    width: 90px;
-    height: 90px;
-    margin: 0 auto 15px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #fd4646, #02ac70);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .contact-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
 
-.avatar i {
-    font-size: 40px;
-    color: #fff;
+    .contact-title h1 {
+        font-size: 2em;
+    }
+
+    .contact-title p {
+        text-align: center;
+    }
 }
